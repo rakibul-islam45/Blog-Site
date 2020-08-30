@@ -35,8 +35,11 @@ if (isset($_POST['reg_user'])) {
     $query = "SELECT * FROM users WHERE userName='$username' 
 								OR email='$email' LIMIT 1";
 
-    $result = mysqli_query($pdo, $query);
-    $user = mysqli_fetch_assoc($result);
+
+
+    //$statement = $pdo->prepare($query);
+   // $statement->execute();
+    $user =  $pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
     if ($user) {
         if ($user['userName'] === $username) {
@@ -49,19 +52,19 @@ if (isset($_POST['reg_user'])) {
 
     if (count($errors) == 0) {
         $password = md5($password_1);
-        $query = "INSERT INTO users (name, userName, email, password) 
-					  VALUES(':name',':username', ':email', ':password')";
+        $queryI = "INSERT INTO users (name, userName, email, password) 
+					  VALUES(:name, :username, :email, :password)";
 
 
-        $statement = $pdo->prepare($query);
+        $statement = $pdo->prepare($queryI);
         $statement->bindValue(':name', $name);
         $statement->bindValue(':username', $username);
         $statement->bindValue(':email', $email);
         $statement->bindValue(':password', $password);
 
         if($statement->execute()) {
-           // header("location: login.php");
-            echo 'Inserted';
+            header("location: login.php");
+           // echo 'Inserted';
         } else {
             echo 'Could not insert';
         }
