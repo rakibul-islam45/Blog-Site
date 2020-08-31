@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9182bc3a-79c9-4473-92f5-a4e66cadec89" name="Default Changelist" comment="initial commit.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/indexAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/indexAdmin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +71,7 @@
       <workItem from="1598629946291" duration="1057000" />
       <workItem from="1598672587585" duration="535000" />
       <workItem from="1598723703766" duration="470000" />
-      <workItem from="1598890014708" duration="2750000" />
+      <workItem from="1598890014708" duration="3680000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit.">
       <created>1598630681725</created>
