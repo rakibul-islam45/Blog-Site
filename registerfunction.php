@@ -1,9 +1,9 @@
 <?php
-    include ('./config.php');
-
+    include ('config.php');
+$name = "";
 $username = "";
 $email    = "";
-$errors = array();
+ $errors = array();
 
 
 if (isset($_POST['reg_user'])) {
@@ -39,7 +39,7 @@ if (isset($_POST['reg_user'])) {
 
     //$statement = $pdo->prepare($query);
    // $statement->execute();
-    $user =  $pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
+    $user =  $pdo->query($query)->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
         if ($user['userName'] === $username) {
@@ -70,3 +70,42 @@ if (isset($_POST['reg_user'])) {
         }
     }
 }
+?>
+    <html lang="en">
+    <head>
+        <style type = "text/css">
+            .message {
+                width: 100%;
+                margin: 0px auto;
+                padding: 10px 0px;
+                color: #3c763d;
+                background: #dff0d8;
+                border: 1px solid #3c763d;
+                border-radius: 5px;
+                text-align: center;
+            }
+            .error {
+                color: #a94442;
+                background: #f2dede;
+                border: 1px solid #a94442;
+                margin-bottom: 20px;
+            }
+            .validation_errors p {
+                text-align: left;
+                margin-left: 10px;
+            }
+            .logged_in_info {
+                text-align: right;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    </html>
+
+<?php if (count($errors) > 0) : ?>
+    <div class="message error validation_errors" >
+        <?php foreach ($errors as $error) : ?>
+            <p><?php echo $error ?></p>
+        <?php endforeach ?>
+    </div>
+<?php endif ?>
