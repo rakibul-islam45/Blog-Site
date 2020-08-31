@@ -19,9 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9182bc3a-79c9-4473-92f5-a4e66cadec89" name="Default Changelist" comment="initial commit.">
+    <list default="true" id="9182bc3a-79c9-4473-92f5-a4e66cadec89" name="Default Changelist" comment="post read page added.">
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/indexAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/indexAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +37,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4" />
   <component name="ProjectId" id="1gjZQIfNNe4QOofpkK4Fej9698F" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -80,7 +83,21 @@
       <option name="project" value="LOCAL" />
       <updated>1598630681725</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="index updated.">
+      <created>1598908638367</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598908638367</updated>
+    </task>
+    <task id="LOCAL-00003" summary="post read page added.">
+      <created>1598908899235</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1598908899235</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,10 +113,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit." />
+    <MESSAGE value="index updated." />
+    <MESSAGE value="post read page added." />
+    <option name="LAST_COMMIT_MESSAGE" value="post read page added." />
   </component>
   <component name="WindowStateProjectService">
     <state x="266" y="57" width="824" height="691" key="#CLI_Interpreters" timestamp="1598630302905">
@@ -126,19 +146,19 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="541" y="297" width="284" height="207" key="Github.ShareDialog/0.27.1366.741@0.27.1366.741" timestamp="1598630800871" />
-    <state x="719" y="448" width="399" height="156" key="NewPhpFileDialog" timestamp="1598891593891">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog" timestamp="1598906425475">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1598630385358" />
+    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1598906425475" />
     <state x="719" y="448" width="399" height="156" key="NewPhpFileDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1598891593891" />
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1598630316006">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1598630316006" />
-    <state x="278" y="119" width="800" height="563" key="Vcs.Push.Dialog.v2" timestamp="1598630693771">
+    <state x="278" y="119" width="800" height="563" key="Vcs.Push.Dialog.v2" timestamp="1598908902206">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="278" y="119" width="800" height="563" key="Vcs.Push.Dialog.v2/0.27.1366.741@0.27.1366.741" timestamp="1598630693771" />
+    <state x="278" y="119" width="800" height="563" key="Vcs.Push.Dialog.v2/0.27.1366.741@0.27.1366.741" timestamp="1598908902206" />
     <state x="464" y="312" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598631005955">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
