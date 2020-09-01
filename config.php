@@ -1,4 +1,5 @@
 <?php
+
 $server = "127.0.0.1";
 $dbname = "blogSite";
 $user = "rakib";
@@ -13,4 +14,5 @@ try {
     die;
 }
 
-       // var_dump($pdo->query("select version()"));
+   //   var_dump($pdo->query("select version()"));
+

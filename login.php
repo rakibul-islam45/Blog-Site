@@ -11,7 +11,9 @@ include_once ('config.php');
             font-size: 120%;
             background: #F8F8FF;
         }
-        .header {
+        .header {592653
+
+
             width: 40%;
             margin: 50px auto 0px;
             color: white;
