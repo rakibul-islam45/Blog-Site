@@ -19,12 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9182bc3a-79c9-4473-92f5-a4e66cadec89" name="Default Changelist" comment="post read page added.">
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/adminLoginFunction.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/adminLoginFunction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+    <list default="true" id="9182bc3a-79c9-4473-92f5-a4e66cadec89" name="Default Changelist" comment="comment part.">
+      <change beforePath="$PROJECT_DIR$/loginfunction.php" beforeDir="false" afterPath="$PROJECT_DIR$/loginfunction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/singlepost.php" beforeDir="false" afterPath="$PROJECT_DIR$/singlepost.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
