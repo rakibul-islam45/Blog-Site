@@ -8,7 +8,10 @@ $statement->execute();
 $posts = $statement->fetch(PDO::FETCH_ASSOC);
 
 ?>
+<?php
 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,7 +50,7 @@ $posts = $statement->fetch(PDO::FETCH_ASSOC);
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="fashion.php">Fashion</a></li>
+					<li><a href="postcCreate.php">Fashion</a></li>
 					<li class="colorlib-active"><a href="travel.html">Travel</a></li>
 					<li><a href="about.html">About</a></li>
 					<li><a href="contact.html">Contact</a></li>
@@ -190,18 +193,22 @@ $posts = $statement->fetch(PDO::FETCH_ASSOC);
 		              
 		              <div class="comment-form-wrap pt-5">
 		                <h3 class="mb-5">Leave a comment</h3>
-		                <form action="#" class="p-3 p-md-5 bg-light">
+		                <form method="post" action="comments.php" class="p-3 p-md-5 bg-light">
 		                  <div class="form-group">
 		                    <label for="name">Name *</label>
 		                    <input type="text" class="form-control" id="name">
 		                  </div>
+                            <div class="form-group">
+                                <label for="username">User Name *</label>
+                                <input type="text" class="form-control" id="username">
+                            </div>
 		                  <div class="form-group">
 		                    <label for="email">Email *</label>
 		                    <input type="email" class="form-control" id="email">
 		                  </div>
 		                  <div class="form-group">
-		                    <label for="website">Website</label>
-		                    <input type="url" class="form-control" id="website">
+		                    <label for="password">Password</label>
+		                    <input type="password" class="form-control" id="password">
 		                  </div>
 
 		                  <div class="form-group">

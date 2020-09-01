@@ -20,7 +20,7 @@ if (isset($_POST['login_user'])) {
         $password = md5($password);
         $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
         $user =  $pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
-        if ($user ){
+        if ($user ) {
 //            $_SESSION['username'] = $username;
 //            $_SESSION['success'] = "You are now logged in";
             header('location: index.php');
