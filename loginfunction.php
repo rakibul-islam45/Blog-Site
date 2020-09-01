@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ('config.php');
 
 //$email    = "";
@@ -20,9 +21,12 @@ if (isset($_POST['login_user'])) {
         $password = md5($password);
         $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
         $user =  $pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
+        $username = $user[0]['userName'];
+        $userId = $user[0]['id'];
         if ($user ) {
-//            $_SESSION['username'] = $username;
-//            $_SESSION['success'] = "You are now logged in";
+            $_SESSION['username'] = $username;
+            $_SESSION['userid'] = $userId;
+            $_SESSION['success'] = "You are now logged in";
             header('location: index.php');
         }else {
             array_push($errors, "Wrong email/password combination");
