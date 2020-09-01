@@ -1,3 +1,51 @@
+<?php
+session_start();
+$userid = $_SESSION['userid'];
+include ('config.php');
+$errors = array();
+ if(isset($_POST['post_btn'])){
+
+     $title = $_POST['title'];
+     $body = $_POST['body'];
+     $tag = $_POST['tag'];
+    $userid = $_SESSION['userid'];
+
+     if (empty($title)) {
+         array_push($errors, "Please give a title");
+     }
+     if (empty($body)) {
+         array_push($errors, "Post text required");
+     }
+     if (empty($tag)) {
+         array_push($errors, "Post tag required");
+     }
+    //$time = UNIX_TIMESTAMP();
+     if(count($errors) == 0){
+         $queryI = "INSERT INTO post (userId, title, body, tag)
+					  VALUES(:userid, :title, :body, :tag)";
+
+
+         $statement = $pdo->prepare($queryI);
+         $statement->bindValue(':userid', $userid);
+         $statement->bindValue(':title', $title);
+         $statement->bindValue(':body', $body);
+         $statement->bindValue(':tag', $tag);
+
+         if($statement->execute()) {
+             header("location: userprofile.php");
+             // echo 'Inserted';
+         } else {
+             echo 'Could not insert';
+         }
+
+     }
+
+ }
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,6 +75,32 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+      <style type = "text/css">
+          .message {
+              width: 70%;
+              margin:  auto;
+              padding: 10px 0px;
+              color: #3c763d;
+              background: #dff0d8;
+              border: 1px solid #3c763d;
+              border-radius: 5px;
+              text-align: center;
+          }
+          .error {
+              color: #a94442;
+              background: #f2dede;
+              border: 1px solid #a94442;
+              margin-bottom: 20px;
+          }
+          .validation_errors p {
+              text-align: center;
+              margin-left: 10px;
+          }
+          .logged_in_info {
+              text-align: right;
+              padding: 10px;
+          }
+      </style>
   </head>
   <body>
 
@@ -64,7 +138,7 @@
 				<div class="container">
 					<div class="row px-md-4">
 						<div class="col-md-12">
-                            <form method="post" action="comments.php" class="p-3 p-md-5 bg-light">
+                            <form method="post" action="#" class="p-3 p-md-5 bg-light">
                             <div class="form-group">
                                 <label for="title">Post Title *</label>
                                 <input type="text" name="title" class="form-control" id="title">
@@ -74,11 +148,11 @@
                                 <textarea name="body" id="body" cols="30" rows="10" class="form-control"></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="username">Post Tag*</label>
-                                <input type="text" class="form-control" id="username">
+                                <label for="tag">Post Tag*</label>
+                                <input type="text" class="form-control" name="tag" id="tag">
                             </div>
                             <div class="form-group">
-                                <input type="submit" value="Post" class="btn py-3 px-4 btn-primary">
+                                <input type="submit" value="Post" name="post_btn" class="btn py-3 px-4 btn-primary">
                             </div>
                             </form>
 						</div>
@@ -112,3 +186,11 @@
     
   </body>
 </html>
+
+<?php if (count($errors) > 0) : ?>
+    <div class="message error validation_errors" >
+        <?php foreach ($errors as $error) : ?>
+            <p><?php echo $error ?></p>
+        <?php endforeach ?>
+    </div>
+<?php endif ?>
