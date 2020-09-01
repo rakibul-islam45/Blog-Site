@@ -1,5 +1,6 @@
 <?php
 include ('includes/header.php');
+
 ?>
 
 <div class="container">
@@ -31,8 +32,10 @@ include ('includes/header.php');
                                     <hr>
                                 </form>
 
+
                             </div>
-                        </div>
+
+                            </div>
                     </div>
                 </div>
             </div>

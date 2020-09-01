@@ -1,19 +1,23 @@
 <?php
 
+
 $server = "127.0.0.1";
 $dbname = "blogSite";
 $user = "hasan";
 $pass = "user200097";
+global $pdo;
 $pdo = new PDO("mysql:host=$server;dbname=$dbname", $user, $pass);
 
 try {
     $pdo = new PDO("mysql:host=$server;dbname=$dbname;charset=utf8", $user, $pass);
-    $pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-} catch (Throwable $t){
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (Throwable $t) {
     echo 'Cannot Connect to Database';
     die;
 }
-var_dump($pdo->query("select version()"));
+
+//var_dump($pdo->query("select version()"));
+
 
 //$email    = "";
 //$password = "";
@@ -33,7 +37,8 @@ if (isset($_POST['login_admin'])) {
     if (count($errors) == 0) {
         $password = md5($password);
 
-       $query = "SELECT * FROM user_login WHERE Email='$email' AND Password='$password'";
+        $query = "SELECT * FROM user_login WHERE Password='$password' AND Email='$email'";
+
         $user =  $pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
         if ($user ){
 //            $_SESSION['username'] = $username;

@@ -1,9 +1,10 @@
 <?php
 $server = "127.0.0.1";
 $dbname = "blogSite";
-$user = "rakib";
-$pass = "rakibul";
-$pdo = new PDO("mysql:host=$server;dbname=$dbname", $user, $pass);
+$user = "hasan";
+$pass = "user200097";
+global $pdo;
+ $pdo = new PDO("mysql:host=$server;dbname=$dbname", $user, $pass);
 
 try {
     $pdo = new PDO("mysql:host=$server;dbname=$dbname;charset=utf8", $user, $pass);
