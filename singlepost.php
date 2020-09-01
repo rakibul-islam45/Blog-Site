@@ -9,7 +9,10 @@ $posts = $statement->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <?php
-
+$queryC = "SELECT * FROM comments WHERE postid = $postid";
+$sth = $pdo->prepare($queryC);
+$sth->execute();
+$commnets = $sth->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -50,7 +53,7 @@ $posts = $statement->fetch(PDO::FETCH_ASSOC);
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="postcCreate.php">Fashion</a></li>
+					<li><a href="postCreate.php">Fashion</a></li>
 					<li class="colorlib-active"><a href="travel.html">Travel</a></li>
 					<li><a href="about.html">About</a></li>
 					<li><a href="contact.html">Contact</a></li>
@@ -89,10 +92,8 @@ $posts = $statement->fetch(PDO::FETCH_ASSOC);
 
 		            <div class="tag-widget post-tag-container mb-5 mt-5">
 		              <div class="tagcloud">
-		                <a href="#" class="tag-cloud-link">Life</a>
-		                <a href="#" class="tag-cloud-link">Sport</a>
-		                <a href="#" class="tag-cloud-link">Tech</a>
-		                <a href="#" class="tag-cloud-link">Travel</a>
+		                <a href="#" class="tag-cloud-link"><?php echo $posts['tag']; ?></a>
+
 		              </div>
 		            </div>
 		            
@@ -108,115 +109,118 @@ $posts = $statement->fetch(PDO::FETCH_ASSOC);
 
 
 		            <div class="pt-5 mt-5">
-		              <h3 class="mb-5 font-weight-bold">6 Comments</h3>
+		              <h3 class="mb-5 font-weight-bold">Comments</h3>
+                        <?php foreach ($commnets as $comment): ?>
 		              <ul class="comment-list">
 		                <li class="comment">
 		                  <div class="vcard bio">
 		                    <img src="images/person_1.jpg" alt="Image placeholder">
 		                  </div>
 		                  <div class="comment-body">
-		                    <h3>John Doe</h3>
+		                    <h3><?php echo $comment['userName']?></h3>
 		                    <div class="meta">October 03, 2018 at 2:21pm</div>
-		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+		                    <p><?php echo $comment['comment']?></p>
 		                    <p><a href="#" class="reply">Reply</a></p>
 		                  </div>
 		                </li>
 
-		                <li class="comment">
-		                  <div class="vcard bio">
-		                    <img src="images/person_1.jpg" alt="Image placeholder">
-		                  </div>
-		                  <div class="comment-body">
-		                    <h3>John Doe</h3>
-		                    <div class="meta">October 03, 2018 at 2:21pm</div>
-		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-		                    <p><a href="#" class="reply">Reply</a></p>
-		                  </div>
-
-		                  <ul class="children">
-		                    <li class="comment">
-		                      <div class="vcard bio">
-		                        <img src="images/person_1.jpg" alt="Image placeholder">
-		                      </div>
-		                      <div class="comment-body">
-		                        <h3>John Doe</h3>
-		                        <div class="meta">October 03, 2018 at 2:21pm</div>
-		                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-		                        <p><a href="#" class="reply">Reply</a></p>
-		                      </div>
-
-
-		                      <ul class="children">
-		                        <li class="comment">
-		                          <div class="vcard bio">
-		                            <img src="images/person_1.jpg" alt="Image placeholder">
-		                          </div>
-		                          <div class="comment-body">
-		                            <h3>John Doe</h3>
-		                            <div class="meta">October 03, 2018 at 2:21pm</div>
-		                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-		                            <p><a href="#" class="reply">Reply</a></p>
-		                          </div>
-
-		                            <ul class="children">
-		                              <li class="comment">
-		                                <div class="vcard bio">
-		                                  <img src="images/person_1.jpg" alt="Image placeholder">
-		                                </div>
-		                                <div class="comment-body">
-		                                  <h3>John Doe</h3>
-		                                  <div class="meta">October 03, 2018 at 2:21pm</div>
-		                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-		                                  <p><a href="#" class="reply">Reply</a></p>
-		                                </div>
-		                              </li>
-		                            </ul>
-		                        </li>
-		                      </ul>
-		                    </li>
-		                  </ul>
-		                </li>
-
-		                <li class="comment">
-		                  <div class="vcard bio">
-		                    <img src="images/person_1.jpg" alt="Image placeholder">
-		                  </div>
-		                  <div class="comment-body">
-		                    <h3>John Doe</h3>
-		                    <div class="meta">October 03, 2018 at 2:21pm</div>
-		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-		                    <p><a href="#" class="reply">Reply</a></p>
-		                  </div>
-		                </li>
+<!--		                <li class="comment">-->
+<!--		                  <div class="vcard bio">-->
+<!--		                    <img src="images/person_1.jpg" alt="Image placeholder">-->
+<!--		                  </div>-->
+<!--		                  <div class="comment-body">-->
+<!--		                    <h3>John Doe</h3>-->
+<!--		                    <div class="meta">October 03, 2018 at 2:21pm</div>-->
+<!--		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>-->
+<!--		                    <p><a href="#" class="reply">Reply</a></p>-->
+<!--		                  </div>-->
+<!---->
+<!--		                  <ul class="children">-->
+<!--		                    <li class="comment">-->
+<!--		                      <div class="vcard bio">-->
+<!--		                        <img src="images/person_1.jpg" alt="Image placeholder">-->
+<!--		                      </div>-->
+<!--		                      <div class="comment-body">-->
+<!--		                        <h3>John Doe</h3>-->
+<!--		                        <div class="meta">October 03, 2018 at 2:21pm</div>-->
+<!--		                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>-->
+<!--		                        <p><a href="#" class="reply">Reply</a></p>-->
+<!--		                      </div>-->
+<!---->
+<!---->
+<!--		                      <ul class="children">-->
+<!--		                        <li class="comment">-->
+<!--		                          <div class="vcard bio">-->
+<!--		                            <img src="images/person_1.jpg" alt="Image placeholder">-->
+<!--		                          </div>-->
+<!--		                          <div class="comment-body">-->
+<!--		                            <h3>John Doe</h3>-->
+<!--		                            <div class="meta">October 03, 2018 at 2:21pm</div>-->
+<!--		                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>-->
+<!--		                            <p><a href="#" class="reply">Reply</a></p>-->
+<!--		                          </div>-->
+<!---->
+<!--		                            <ul class="children">-->
+<!--		                              <li class="comment">-->
+<!--		                                <div class="vcard bio">-->
+<!--		                                  <img src="images/person_1.jpg" alt="Image placeholder">-->
+<!--		                                </div>-->
+<!--		                                <div class="comment-body">-->
+<!--		                                  <h3>John Doe</h3>-->
+<!--		                                  <div class="meta">October 03, 2018 at 2:21pm</div>-->
+<!--		                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>-->
+<!--		                                  <p><a href="#" class="reply">Reply</a></p>-->
+<!--		                                </div>-->
+<!--		                              </li>-->
+<!--		                            </ul>-->
+<!--		                        </li>-->
+<!--		                      </ul>-->
+<!--		                    </li>-->
+<!--		                  </ul>-->
+<!--		                </li>-->
+<!---->
+<!--		                <li class="comment">-->
+<!--		                  <div class="vcard bio">-->
+<!--		                    <img src="images/person_1.jpg" alt="Image placeholder">-->
+<!--		                  </div>-->
+<!--		                  <div class="comment-body">-->
+<!--		                    <h3>John Doe</h3>-->
+<!--		                    <div class="meta">October 03, 2018 at 2:21pm</div>-->
+<!--		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>-->
+<!--		                    <p><a href="#" class="reply">Reply</a></p>-->
+<!--		                  </div>-->
+<!--		                </li>-->
 		              </ul>
+                        <?php endforeach; ?>
 		              <!-- END comment-list -->
 		              
 		              <div class="comment-form-wrap pt-5">
 		                <h3 class="mb-5">Leave a comment</h3>
 		                <form method="post" action="comments.php" class="p-3 p-md-5 bg-light">
-		                  <div class="form-group">
-		                    <label for="name">Name *</label>
-		                    <input type="text" class="form-control" id="name">
-		                  </div>
-                            <div class="form-group">
-                                <label for="username">User Name *</label>
-                                <input type="text" class="form-control" id="username">
-                            </div>
-		                  <div class="form-group">
-		                    <label for="email">Email *</label>
-		                    <input type="email" class="form-control" id="email">
-		                  </div>
-		                  <div class="form-group">
-		                    <label for="password">Password</label>
-		                    <input type="password" class="form-control" id="password">
-		                  </div>
+<!--		                  <div class="form-group">-->
+<!--		                    <label for="name">Name *</label>-->
+<!--		                    <input type="text" class="form-control" id="name">-->
+<!--		                  </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="username">User Name *</label>-->
+<!--                                <input type="text" class="form-control" id="username">-->
+<!--                            </div>-->
+<!--		                  <div class="form-group">-->
+<!--		                    <label for="email">Email *</label>-->
+<!--		                    <input type="email" class="form-control" id="email">-->
+<!--		                  </div>-->
+<!--		                  <div class="form-group">-->
+<!--		                    <label for="password">Password</label>-->
+<!--		                    <input type="password" class="form-control" id="password">-->
+<!--		                  </div>-->
 
 		                  <div class="form-group">
-		                    <label for="message">Message</label>
-		                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+		                    <label for="comment">Comment</label>
+		                    <textarea name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
 		                  </div>
+                            <input type="hidden" name="postid" value="<?php echo $postid ?>">
 		                  <div class="form-group">
-		                    <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+                              <button type="submit" name="comment_btn"  class="btn py-3 px-4 btn-primary"> Post Comment </button>
 		                  </div>
 
 		                </form>
