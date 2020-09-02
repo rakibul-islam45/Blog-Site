@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9182bc3a-79c9-4473-92f5-a4e66cadec89" name="Default Changelist" comment="comment part.">
-      <change beforePath="$PROJECT_DIR$/loginfunction.php" beforeDir="false" afterPath="$PROJECT_DIR$/loginfunction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/singlepost.php" beforeDir="false" afterPath="$PROJECT_DIR$/singlepost.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +31,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,9 +52,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Admin" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -74,6 +84,7 @@
       <workItem from="1598672587585" duration="535000" />
       <workItem from="1598723703766" duration="470000" />
       <workItem from="1598890014708" duration="3680000" />
+      <workItem from="1599063126494" duration="1136000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit.">
       <created>1598630681725</created>
@@ -133,10 +144,11 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="625" y="235" width="732" height="644" key="#Inspections/72.27.1848.1053@72.27.1848.1053" timestamp="1598989893363" />
-    <state x="141" y="55" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598630003558">
-      <screen x="0" y="27" width="1366" height="741" />
+    <state x="263" y="67" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599063181881">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="141" y="55" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.741@0.27.1366.741" timestamp="1598630003558" />
+    <state x="263" y="67" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1599063181881" />
     <state x="729" y="302" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598890403079">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -149,11 +161,11 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="541" y="297" width="284" height="207" key="Github.ShareDialog/0.27.1366.741@0.27.1366.741" timestamp="1598630800871" />
-    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog" timestamp="1598906425475">
-      <screen x="0" y="27" width="1366" height="741" />
+    <state x="719" y="448" width="399" height="156" key="NewPhpFileDialog" timestamp="1599063991957">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1598906425475" />
-    <state x="719" y="448" width="399" height="156" key="NewPhpFileDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1598891593891" />
+    <state x="719" y="448" width="399" height="156" key="NewPhpFileDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1599063991957" />
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1598630316006">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
