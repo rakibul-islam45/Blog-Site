@@ -28,7 +28,6 @@ if($userid) {
         }
 
     }
-
 } else{
     echo "<script type='text/javascript'>alert('Please register or login to comment!');
         window.location.href='register.php';
