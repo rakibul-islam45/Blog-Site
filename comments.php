@@ -19,16 +19,20 @@ if($userid) {
         $statement->bindValue(':comment', $comment);
 
         if ($statement->execute()) {
-//    header("location: login.php");
-            echo 'Inserted';
+            header("location: singlepost.php");
+//            echo 'Inserted';
         } else {
-            echo 'Could not insert';
+            echo "<script type='text/javascript'>alert('Something is wrong!');
+        window.location.href='singlepost.php';
+        </script>";
         }
 
     }
 
 } else{
-    echo "<script type='text/javascript'>alert('Please register to comment!');</script>";
-    header('location : register.php');
+    echo "<script type='text/javascript'>alert('Please register or login to comment!');
+        window.location.href='register.php';
+        </script>";
+   // header('location : register.php');
     }
 
