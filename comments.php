@@ -19,7 +19,7 @@ if($userid) {
         $statement->bindValue(':comment', $comment);
 
         if ($statement->execute()) {
-//    header("location: login.php");
+//    header("location: adminLogin.php");
             echo 'Inserted';
         } else {
             echo 'Could not insert';

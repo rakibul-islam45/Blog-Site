@@ -63,7 +63,7 @@ if (isset($_POST['reg_user'])) {
         $statement->bindValue(':password', $password);
 
         if($statement->execute()) {
-            header("location: login.php");
+            header("location: adminLogin.php");
            // echo 'Inserted';
         } else {
             echo 'Could not insert';
