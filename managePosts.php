@@ -23,7 +23,6 @@ $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 </div>
 
-
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -40,6 +39,7 @@ $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
                     <th>Tag</th>
                     <th>Post Body</th>
                     <th>Created Date</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -52,6 +52,11 @@ $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
                     <td><?php echo $post['tag']; ?></td>
                     <td><?php echo $post['body']; ?></td>
                     <td><?php echo $post['created']; ?></td>
+                    <td>
+                        <a href="deletePostFromAdmin.php?postId=<?php echo $post[postId]; ?>" class="btn btn-danger" >
+                            Delete
+                        </a>
+                    </td>
                 </tr>
                 <?php endforeach ?>
 
