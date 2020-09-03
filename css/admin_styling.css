@@ -45,7 +45,7 @@ th { text-align: center;}
     padding: 15px 45px;
     font-family: 'Noto Serif', serif;
     color: white;
-    background: black;
+    background: #0c5460;
 }
 .header .logo { width: 50%; float: left; }
 .header .logo h1 { color: white; }
@@ -136,3 +136,16 @@ th { text-align: center;}
 }
 .error {color: #a94442; background: #f2dede; border: 1px solid #a94442; margin-bottom: 20px; }
 .validation_errors p {text-align: left;margin-left: 10px;}
+
+.logout-btn
+{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+

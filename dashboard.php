@@ -1,21 +1,47 @@
-<?php  include('../config.php'); ?>
+
+
+
 
 <?php include('dashboardHeader.php'); ?>
+
+
+<?php
+
+$server = "127.0.0.1";
+$dbname = "blogSite";
+$user = "hasan";
+$pass = "user200097";
+global $pdo;
+$pdo = new PDO("mysql:host=$server;dbname=$dbname", $user, $pass);
+
+try {
+    $pdo = new PDO("mysql:host=$server;dbname=$dbname;charset=utf8", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (Throwable $t) {
+    echo 'Cannot Connect to Database';
+    die;
+}
+
+
+
+
+$postcount = $pdo->query('select count(*) from post')->fetchColumn();
+
+
+
+?>
+
+
 <title>Admin | Dashboard</title>
 </head>
 <body>
 <div class="header">
     <div class="logo">
-        <a href="<?php echo BASE_URL .'admin/dashboard.php' ?>">
-            <h1>LifeBlog - Admin</h1>
+        <a href="<?php echo BASE_URL .'dashboard.php' ?>">
+            <h1>Welcome to - Admin</h1>
         </a>
     </div>
-    <?php if (isset($_SESSION['user'])): ?>
-        <div class="user-info">
-            <span><?php echo $_SESSION['user']['username'] ?></span> &nbsp; &nbsp;
-            <a href="<?php echo BASE_URL . '/logout.php'; ?>" class="logout-btn">logout</a>
-        </div>
-    <?php endif ?>
+
 </div>
 <div class="container dashboard">
     <h1>Welcome</h1>
@@ -24,8 +50,8 @@
             <span>43</span> <br>
             <span>Newly registered users</span>
         </a>
-        <a href="posts.php">
-            <span>43</span> <br>
+        <a href="managePosts.php">
+            <span><?php echo $postcount?></span> <br>
             <span>Published posts</span>
         </a>
         <a>
@@ -36,7 +62,7 @@
     <br><br><br>
     <div class="buttons">
         <a href="users.php">Add Users</a>
-        <a href="posts.php">Add Posts</a>
+        <a href="managePosts.php">Add Posts</a>
     </div>
 </div>
 </body>
