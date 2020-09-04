@@ -27,6 +27,7 @@ try {
 
 
 $postcount = $pdo->query('select count(*) from post')->fetchColumn();
+$usercount = $pdo->query('select count(*) from users')->fetchColumn();
 
 
 
@@ -40,12 +41,12 @@ $postcount = $pdo->query('select count(*) from post')->fetchColumn();
     <h1>Welcome</h1>
     <div class="stats">
         <a href="users.php" class="first">
-            <span>43</span> <br>
-            <span>Newly registered users</span>
+            <span><?php echo $usercount?></span> <br>
+            <span>Total users</span>
         </a>
         <a href="managePosts.php">
             <span><?php echo $postcount?></span> <br>
-            <span>Published posts</span>
+            <span>Total posts</span>
         </a>
         <a>
             <span>43</span> <br>
