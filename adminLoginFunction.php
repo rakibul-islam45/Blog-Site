@@ -37,11 +37,13 @@ if (isset($_POST['admin_user'])) {
         $query = "SELECT * FROM adminLogin WHERE email='$email' AND password='$password'";
         var_dump(query1);
         $user =  $pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
-        $username = $user[0]['userName'];
+        $username = $user[0]['name'];
         $userId = $user[0]['id'];
         if ($user ) {
             $_SESSION['username'] = $username;
             $_SESSION['userid'] = $userId;
+            $_SESSION['email'] = $email;
+            $_SESSION['password'] = $password;
             $_SESSION['success'] = "You are now logged in";
             header('location: dashboard.php');
         }else {

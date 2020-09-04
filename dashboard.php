@@ -1,11 +1,12 @@
 
-
-
-
-<?php include('dashboardHeader.php'); ?>
-
-
 <?php
+session_start();
+if(!$_SESSION['username'])
+{
+    header("location:adminLogin.php");
+}
+
+include('dashboardHeader.php');
 
 $server = "127.0.0.1";
 $dbname = "blogSite";
@@ -32,17 +33,9 @@ $postcount = $pdo->query('select count(*) from post')->fetchColumn();
 ?>
 
 
-<title>Admin | Dashboard</title>
-</head>
-<body>
-<div class="header">
-    <div class="logo">
-        <a href="<?php echo BASE_URL .'dashboard.php' ?>">
-            <h1>Welcome to - Admin</h1>
-        </a>
-    </div>
 
-</div>
+
+
 <div class="container dashboard">
     <h1>Welcome</h1>
     <div class="stats">

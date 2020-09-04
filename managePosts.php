@@ -1,6 +1,14 @@
 <?php
+session_start();
+if(!$_SESSION['username'])
+{
+    header("location:adminLogin.php");
+}
+
+
 include('dashboardHeader.php');
 include ('config.php');
+
 
 $query = "SELECT  users.name, post.postId, post.titile, post.tag,post.body,post.created 
 FROM users,post 
@@ -12,16 +20,6 @@ $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
-<title>Admin | posts</title>
-</head>
-<body>
-<div class="header">
-    <div class="logo">
-            <h1 style="text-align: center">Welcome to - posts</h1>
-        </a>
-    </div>
-
-</div>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">

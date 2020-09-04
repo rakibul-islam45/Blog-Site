@@ -12,3 +12,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.8.0/ckeditor.js"></script>
     <!-- Styling for public area -->
     <link rel="stylesheet" href="css/admin_styling.css">
+    <title>Admin | Dashboard</title>
+</head>
+<body>
+<div class="header">
+    <div class="logo">
+        <a href="<?php echo BASE_URL .'dashboard.php' ?>">
+            <h1>Welcome to - Admin</h1>
+        </a>
+    </div>
+    <div class="buttons">
+        <a style="float: right" href="adminLogout.php"><h2>Logout</h2></a>
+
+    </div>
+
+</div>
