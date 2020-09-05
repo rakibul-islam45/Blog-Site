@@ -19,16 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9182bc3a-79c9-4473-92f5-a4e66cadec89" name="Default Changelist" comment="files updated.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/comments.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginfunction.php" beforeDir="false" afterPath="$PROJECT_DIR$/loginfunction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/singlepost.php" beforeDir="false" afterPath="$PROJECT_DIR$/singlepost.php" afterDir="false" />
-    </list>
+    <list default="true" id="9182bc3a-79c9-4473-92f5-a4e66cadec89" name="Default Changelist" comment="files updated." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +30,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4" />
   <component name="ProjectId" id="1gjZQIfNNe4QOofpkK4Fej9698F" />
@@ -89,7 +81,7 @@
       <workItem from="1599170687414" duration="847000" />
       <workItem from="1599191560907" duration="16767000" />
       <workItem from="1599245384896" duration="7563000" />
-      <workItem from="1599288915059" duration="75000" />
+      <workItem from="1599288915059" duration="388000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit.">
       <created>1598630681725</created>
@@ -196,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599084659271</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="files updated.">
+      <created>1599310838180</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1599310838180</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
