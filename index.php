@@ -100,7 +100,7 @@ if (isset($_GET['logout'])) {
 												<p class="meta">
 				              		<span><i class="icon-calendar mr-2"></i><?php echo date("F j, Y ", strtotime($post["created"])); ?></span>
 				              		<span><a href="singlepost.php"><i class="icon-folder-o mr-2"></i><?php echo $post['tag']; ?></a></span>
-				              		<span><i class="icon-comment2 mr-2"></i>5 Comment</span>
+<!--				              		<span><i class="icon-comment2 mr-2"></i>5 Comment</span>-->
 				              	</p>
 			              	</div>
 				              <p class="mb-4"><?php echo $post['body']; ?></p>
@@ -187,13 +187,15 @@ if (isset($_GET['logout'])) {
 	            <div class="sidebar-box ftco-animate">
 	              <h3 class="sidebar-heading">Tag Cloud</h3>
 	              <ul class="tagcloud">
-	                <a href="#" class="tag-cloud-link">php</a>
-	                <a href="#" class="tag-cloud-link">java</a>
+
+<!--                      href="react.php?postId=--><?php //echo $posts['postId']; ?><!--&like=--><?php ?>
+	                <a href="tagSearch.php?tag=php" class="tag-cloud-link">php</a>
+	                <a href="tagSearch.php?tag=java" class="tag-cloud-link">java</a>
+	                <a href="tagSearch.php?tag=html" class="tag-cloud-link">html</a>
 	                <a href="#" class="tag-cloud-link">c</a>
 	                <a href="#" class="tag-cloud-link">c++</a>
-	                <a href="#" class="tag-cloud-link">c#</a>
 	                <a href="#" class="tag-cloud-link">python</a>
-	                <a href="#" class="tag-cloud-link">html</a>
+	                <a href="#" class="tag-cloud-link">c#</a>
 	                <a href="#" class="tag-cloud-link">css</a>
 	              </ul>
 	            </div>

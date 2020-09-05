@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once ('config.php');
  $postid = $_GET['postId'];
  //var_dump($postid);
@@ -14,6 +15,13 @@ $sth = $pdo->prepare($queryC);
 $sth->execute();
 $commnets = $sth->fetchAll(PDO::FETCH_ASSOC);
 
+?>
+<?php
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,8 +61,8 @@ $commnets = $sth->fetchAll(PDO::FETCH_ASSOC);
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="postCreate.php">Fashion</a></li>
-					<li class="colorlib-active"><a href="travel.html">Travel</a></li>
+					<li><a href="postCreate.php">PHP</a></li>
+					<li class="colorlib-active"><a href="index.php">JAVA</a></li>
 					<li><a href="about.html">About</a></li>
 					<li><a href="contact.html">Contact</a></li>
 				</ul>
@@ -62,15 +70,14 @@ $commnets = $sth->fetchAll(PDO::FETCH_ASSOC);
 
 			<div class="colorlib-footer">
 				<h1 id="colorlib-logo" class="mb-4"><a href="index.php" style="background-image: url(images/bg_1.jpg);">Blog <span>Site</span></a></h1>
-				<div class="mb-4">
-					<h3>Subscribe for newsletter</h3>
-					<form action="#" class="colorlib-subscribe-form">
-            <div class="form-group d-flex">
-            	<div class="icon"><span class="icon-paper-plane"></span></div>
-              <input type="text" class="form-control" placeholder="Enter Email Address">
-            </div>
-          </form>
-				</div>
+                <?php  if (isset($_SESSION['username'])) : ?>
+                    <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+                    <p> <a href="index.php?logout='1'" style="color: red;" class="btn py-3 px-4 btn-primary" >Logout</a> </p>
+                <?php endif ?>
+                <?php  if (empty($_SESSION['username'])) : ?>
+                    <p><strong><a href="login.php" class="btn py-3 px-4 btn-primary">Login</a></strong> </p>
+                <?php endif ?>
+
 				<p class="pfooter"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 	  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 	  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
@@ -95,6 +102,37 @@ $commnets = $sth->fetchAll(PDO::FETCH_ASSOC);
 		                <a href="#" class="tag-cloud-link"><?php echo $posts['tag']; ?></a>
 
 		              </div>
+
+                        <?php
+                        //likes
+                        $queryR =  "SELECT COUNT(*) FROM react 
+  		                                 WHERE postId = $postid AND reaction='like'";
+                        $stmt = $pdo->prepare($queryR);
+                        $stmt->execute();
+                        $likeCount = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                        //dislike
+                        $queryD =  "SELECT COUNT(*) FROM react 
+  		                                 WHERE postId = $postid AND reaction='dislike'";
+                        $stmt = $pdo->prepare($queryD);
+                        $stmt->execute();
+                        $dislikeCount = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+
+                        ?>
+
+                        <div>
+<!--                            <form method="post" action="react.php">-->
+                                <?php $like = 'like';
+                                        $dislike = 'dislike';
+                                ?>
+<!--                                <input type="hidden" name="postid" value="--><?php //echo $posts['postId']; ?><!--">-->
+                                <?php foreach ($likeCount as $like){ echo $like ; }?>&nbsp;&nbsp;<a href="react.php?postId=<?php echo $posts['postId']; ?>&like=<?php echo $like; ?>" >Like &nbsp;</a> <?php foreach ($dislikeCount as $dislike){ echo $dislike ; }?>&nbsp;&nbsp;<a href="react.php?postId=<?php echo $posts['postId']; ?>&dislike=<?php echo $dislike; ?>" > &nbsp; Dislike </a>
+<!--                                <button type="submit" id="like" name="like"  >Like</button>-->
+<!---->
+<!--                            </form> -->
+                        </div>
 		            </div>
 		            
 		            <div class="about-author d-flex p-4 bg-light">
@@ -118,78 +156,12 @@ $commnets = $sth->fetchAll(PDO::FETCH_ASSOC);
 		                  </div>
 		                  <div class="comment-body">
 		                    <h3><?php echo $comment['userName']?></h3>
-		                    <div class="meta">October 03, 2018 at 2:21pm</div>
+
 		                    <p><?php echo $comment['comment']?></p>
-		                    <p><a href="#" class="reply">Reply</a></p>
+
 		                  </div>
 		                </li>
 
-<!--		                <li class="comment">-->
-<!--		                  <div class="vcard bio">-->
-<!--		                    <img src="images/person_1.jpg" alt="Image placeholder">-->
-<!--		                  </div>-->
-<!--		                  <div class="comment-body">-->
-<!--		                    <h3>John Doe</h3>-->
-<!--		                    <div class="meta">October 03, 2018 at 2:21pm</div>-->
-<!--		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>-->
-<!--		                    <p><a href="#" class="reply">Reply</a></p>-->
-<!--		                  </div>-->
-<!---->
-<!--		                  <ul class="children">-->
-<!--		                    <li class="comment">-->
-<!--		                      <div class="vcard bio">-->
-<!--		                        <img src="images/person_1.jpg" alt="Image placeholder">-->
-<!--		                      </div>-->
-<!--		                      <div class="comment-body">-->
-<!--		                        <h3>John Doe</h3>-->
-<!--		                        <div class="meta">October 03, 2018 at 2:21pm</div>-->
-<!--		                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>-->
-<!--		                        <p><a href="#" class="reply">Reply</a></p>-->
-<!--		                      </div>-->
-<!---->
-<!---->
-<!--		                      <ul class="children">-->
-<!--		                        <li class="comment">-->
-<!--		                          <div class="vcard bio">-->
-<!--		                            <img src="images/person_1.jpg" alt="Image placeholder">-->
-<!--		                          </div>-->
-<!--		                          <div class="comment-body">-->
-<!--		                            <h3>John Doe</h3>-->
-<!--		                            <div class="meta">October 03, 2018 at 2:21pm</div>-->
-<!--		                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>-->
-<!--		                            <p><a href="#" class="reply">Reply</a></p>-->
-<!--		                          </div>-->
-<!---->
-<!--		                            <ul class="children">-->
-<!--		                              <li class="comment">-->
-<!--		                                <div class="vcard bio">-->
-<!--		                                  <img src="images/person_1.jpg" alt="Image placeholder">-->
-<!--		                                </div>-->
-<!--		                                <div class="comment-body">-->
-<!--		                                  <h3>John Doe</h3>-->
-<!--		                                  <div class="meta">October 03, 2018 at 2:21pm</div>-->
-<!--		                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>-->
-<!--		                                  <p><a href="#" class="reply">Reply</a></p>-->
-<!--		                                </div>-->
-<!--		                              </li>-->
-<!--		                            </ul>-->
-<!--		                        </li>-->
-<!--		                      </ul>-->
-<!--		                    </li>-->
-<!--		                  </ul>-->
-<!--		                </li>-->
-<!---->
-<!--		                <li class="comment">-->
-<!--		                  <div class="vcard bio">-->
-<!--		                    <img src="images/person_1.jpg" alt="Image placeholder">-->
-<!--		                  </div>-->
-<!--		                  <div class="comment-body">-->
-<!--		                    <h3>John Doe</h3>-->
-<!--		                    <div class="meta">October 03, 2018 at 2:21pm</div>-->
-<!--		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>-->
-<!--		                    <p><a href="#" class="reply">Reply</a></p>-->
-<!--		                  </div>-->
-<!--		                </li>-->
 		              </ul>
                         <?php endforeach; ?>
 		              <!-- END comment-list -->
@@ -288,15 +260,14 @@ $commnets = $sth->fetchAll(PDO::FETCH_ASSOC);
 	            <div class="sidebar-box ftco-animate">
 	              <h3 class="sidebar-heading">Tag Cloud</h3>
 	              <ul class="tagcloud">
-	                <a href="#" class="tag-cloud-link">animals</a>
-	                <a href="#" class="tag-cloud-link">human</a>
-	                <a href="#" class="tag-cloud-link">people</a>
-	                <a href="#" class="tag-cloud-link">cat</a>
-	                <a href="#" class="tag-cloud-link">dog</a>
-	                <a href="#" class="tag-cloud-link">nature</a>
-	                <a href="#" class="tag-cloud-link">leaves</a>
-	                <a href="#" class="tag-cloud-link">food</a>
-	              </ul>
+                      <a href="tagSearch.php?tag=php" class="tag-cloud-link">php</a>
+                      <a href="tagSearch.php?tag=java" class="tag-cloud-link">java</a>
+                      <a href="tagSearch.php?tag=html" class="tag-cloud-link">html</a>
+                      <a href="#" class="tag-cloud-link">c</a>
+                      <a href="#" class="tag-cloud-link">c++</a>
+                      <a href="#" class="tag-cloud-link">python</a>
+                      <a href="#" class="tag-cloud-link">c#</a>
+                      <a href="#" class="tag-cloud-link">css</a>
 	            </div>
 
 							<div class="sidebar-box subs-wrap img" style="background-image: url(images/bg_1.jpg);">
@@ -357,3 +328,7 @@ $commnets = $sth->fetchAll(PDO::FETCH_ASSOC);
     
   </body>
 </html>
+
+
+
+

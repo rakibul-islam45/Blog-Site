@@ -40,7 +40,7 @@ if (isset($_POST['login_user'])) {
     <head>
         <style type = "text/css">
             .message {
-                width: 100%;
+                width: 50%;
                 margin: 0px auto;
                 padding: 10px 0px;
                 color: #3c763d;
@@ -68,9 +68,16 @@ if (isset($_POST['login_user'])) {
     </html>
 
 <?php if (count($errors) > 0) : ?>
-    <div class="message error validation_errors" >
-        <?php foreach ($errors as $error) : ?>
-            <p><?php echo $error ?></p>
-        <?php endforeach ?>
-    </div>
+<!--    <div class="message error validation_errors" >-->
+<!--        --><?php //foreach ($errors as $error) : ?>
+<!--            <p>--><?php //    echo "<script type='text/javascript'>alert( $error)
+//        window.location.href='login.php';
+//        </script>";
+//                ?><!--</p>-->
+<!--        --><?php //endforeach; ?>
+
+  <?php  echo '<script type="text/javascript">alert("Error: ' . implode(" , ", $errors) . '");
+                       window.location.href="login.php";
+                        </script>'; ?>
+<!--    </div>-->
 <?php endif ?>

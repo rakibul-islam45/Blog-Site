@@ -19,7 +19,7 @@ if($userid) {
         $statement->bindValue(':comment', $comment);
 
         if ($statement->execute()) {
-            header("location: singlepost.php");
+            header("location: singlepost.php?postId=$postid");
 //            echo 'Inserted';
         } else {
             echo "<script type='text/javascript'>alert('Something is wrong!');
