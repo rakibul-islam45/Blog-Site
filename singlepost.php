@@ -71,7 +71,7 @@ if (isset($_GET['logout'])) {
 			<div class="colorlib-footer">
 				<h1 id="colorlib-logo" class="mb-4"><a href="index.php" style="background-image: url(images/bg_1.jpg);">Blog <span>Site</span></a></h1>
                 <?php  if (isset($_SESSION['username'])) : ?>
-                    <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+                    <p> &nbsp&nbsp<strong><a href="userprofile.php"  style="color: #6f42c1" ><?php echo $_SESSION['username']; ?></a></strong></p>
                     <p> <a href="index.php?logout='1'" style="color: red;" class="btn py-3 px-4 btn-primary" >Logout</a> </p>
                 <?php endif ?>
                 <?php  if (empty($_SESSION['username'])) : ?>

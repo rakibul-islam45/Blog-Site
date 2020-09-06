@@ -85,7 +85,7 @@ include_once ('registerfunction.php');
         }
         form, .content {
             width: 60%;
-            margin: 0px auto;
+            margin: auto;
             padding: 20px;
             border: 1px solid #B0C4DE;
             background: white;
@@ -153,30 +153,7 @@ include_once ('registerfunction.php');
         }
 
     </style>
-    <!--</head>-->
 
-    <!--<body>-->
-    <!--<div class="header">-->
-    <!--<h2>Login</h2>-->
-    <!--</div>-->
-<!--    <form method="post" action="./loginfunction.php">-->
-    <!---->
-    <!--    <div class="input-group">-->
-    <!--        <label for="email">Email</label>-->
-    <!--        <input type="email" id="email" name="email" >-->
-    <!--    </div>-->
-    <!--    <div class="input-group">-->
-    <!--        <label for="password">Password</label>-->
-    <!--        <input type="password" id="password" name="password">-->
-    <!--    </div>-->
-    <!--    <div class="input-group">-->
-    <!--        <button type="submit" class="btn" name="login_user">Login</button>-->
-    <!--    </div>-->
-    <!--    <p>-->
-    <!--        Not yet a member? <a href="register.php">Sign up</a>-->
-    <!--    </p>-->
-    <!--</form>-->
-    <!--</body>-->
 
     <title>Post creation</title>
     <meta charset="utf-8">
@@ -245,17 +222,17 @@ include_once ('registerfunction.php');
 
                 <div class="input-group">
                     <label for="name" class=" input-group label">Name: </label>
-                    <input type="text" name="name" id="name" value="<?php echo $name; ?>" placeholder="Name">
+                    <input type="text" name="name" id="name"  placeholder="Name">
                 </div>
 
                 <div class="input-group">
                     <label for="username">User Name: </label>
-                    <input  type="text" name="username" id="username" value="<?php echo $username; ?>"  placeholder="Username">
+                    <input  type="text" name="username" id="username"  placeholder="Username">
                 </div>
 
                 <div class="input-group">
                     <label for="email">Email: </label>
-                    <input type="email" id="email" name="email" value="<?php echo $email; ?>" placeholder="Email">
+                    <input type="email" id="email" name="email" placeholder="Email">
                 </div>
 
                 <div class="input-group">

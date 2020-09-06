@@ -195,7 +195,7 @@ include_once ('config.php');
                         <button type="submit" class="btn py-3 px-4 btn-primary" name="login_user">Login</button>
                     </div>
                     <p>
-                        Not yet a member? <a href="register.php">Sign up</a>
+                        Not yet a member? <a href="register.php">Register</a>
                     </p>
                 </form>
             </div>

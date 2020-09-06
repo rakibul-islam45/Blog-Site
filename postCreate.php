@@ -3,44 +3,51 @@ session_start();
 $userid = $_SESSION['userid'];
 include ('config.php');
 $errors = array();
- if(isset($_POST['post_btn'])){
+if(!empty($userid)) {
+    if (isset($_POST['post_btn'])) {
 
-     $title = $_POST['title'];
-     $body = $_POST['body'];
-     $tag = $_POST['tag'];
-    $userid = $_SESSION['userid'];
+        $title = $_POST['title'];
+        $body = $_POST['body'];
+        $tag = $_POST['tag'];
+        $userid = $_SESSION['userid'];
 
-     if (empty($title)) {
-         array_push($errors, "Please give a title");
-     }
-     if (empty($body)) {
-         array_push($errors, "Post text required");
-     }
-     if (empty($tag)) {
-         array_push($errors, "Post tag required");
-     }
-    //$time = UNIX_TIMESTAMP();
-     if(count($errors) == 0){
-         $queryI = "INSERT INTO post (userId, title, body, tag)
+        if (empty($title)) {
+            array_push($errors, "Please give a title");
+        }
+        if (empty($body)) {
+            array_push($errors, "Post text required");
+        }
+        if (empty($tag)) {
+            array_push($errors, "Post tag required");
+        }
+        //$time = UNIX_TIMESTAMP();
+        if (count($errors) == 0) {
+            $queryI = "INSERT INTO post (userId, title, body, tag)
 					  VALUES(:userid, :title, :body, :tag)";
 
 
-         $statement = $pdo->prepare($queryI);
-         $statement->bindValue(':userid', $userid);
-         $statement->bindValue(':title', $title);
-         $statement->bindValue(':body', $body);
-         $statement->bindValue(':tag', $tag);
+            $statement = $pdo->prepare($queryI);
+            $statement->bindValue(':userid', $userid);
+            $statement->bindValue(':title', $title);
+            $statement->bindValue(':body', $body);
+            $statement->bindValue(':tag', $tag);
 
-         if($statement->execute()) {
-             header("location: userprofile.php");
-             // echo 'Inserted';
-         } else {
-             echo 'Could not insert';
-         }
+            if ($statement->execute()) {
+                header("location: userprofile.php");
+                // echo 'Inserted';
+            } else {
+                echo 'Could not insert';
+            }
 
-     }
+        }
 
- }
+    }
+
+}else{
+    echo '<script type="text/javascript">alert("Please login!");
+                       window.location.href="login.php";
+                        </script>';
+}
 
 
 
