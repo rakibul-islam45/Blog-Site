@@ -3,17 +3,23 @@ session_start();
 $username = $_SESSION['username'];
 $userId =  $_SESSION['userid'];
 include_once ('config.php');
-$query = "SELECT * FROM post WHERE userId = '$userId' ORDER BY postId DESC ";
-$statement = $pdo->prepare($query);
-$statement->execute();
+if (isset($userId )) {
+    $query = "SELECT * FROM post WHERE userId = '$userId' ORDER BY postId DESC ";
+    $statement = $pdo->prepare($query);
+    $statement->execute();
 
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+}else{
+    echo '<script type="text/javascript">alert("Please login!");
+                       window.location.href="login.php";
+                        </script>';
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Post creation</title>
+    <title>Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -48,8 +54,8 @@ $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
         <nav id="colorlib-main-menu" role="navigation">
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="#">PHP</a></li>
-                <li><a href="#">JAVA</a></li>
+                <li><a href="postCreate.php">Create Post</a></li>
+<!--                <li><a href="#">JAVA</a></li>-->
                 <li><a href="#">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -58,7 +64,7 @@ $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
         <div class="colorlib-footer">
             <h1 id="colorlib-logo" class="mb-4"><a href="index.php" style="background-image: url(images/bg_1.jpg);">Blog <span>Site</span></a></h1>
             <?php  if (isset($_SESSION['username'])) : ?>
-                <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+                <p>Welcome <strong><a href="userprofile.php"  style="color: #6f42c1" ><?php echo $_SESSION['username']; ?></a></strong></p>
                 <p> <a href="index.php?logout='1'" style="color: red;" class="btn py-3 px-4 btn-primary" >Logout</a> </p>
             <?php endif ?>
             <?php  if (empty($_SESSION['username'])) : ?>
@@ -87,7 +93,8 @@ $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
                                         </p>
                                     </div>
                                     <p class="mb-4"><?php echo $post['body']; ?></p>
-                                    <p><a href="updatepost.php?postId=<?php echo $post['postId']; ?>&userId=<?php echo $post['userId']; ?>" class="btn py-3 px-4 btn-primary">Update </a>
+                                    <p><a href="deletepost.php?postId=<?php echo $post['postId']; ?>" class="btn py-3 px-4 btn-primary">Delete </a>
+                                        <a href="updatepost.php?postId=<?php echo $post['postId']; ?>&userId=<?php echo $post['userId']; ?>" class="btn py-3 px-4 btn-primary">Update </a>
                                         <a href="singlepost.php?postId=<?php echo $post['postId']; ?>" class="btn-custom"> Read More <span class="ion-ios-arrow-forward"></span></a>
                                     </p>
                                 </div>
