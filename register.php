@@ -4,63 +4,7 @@ include_once ('registerfunction.php');
 
 
 ?>
-<!--<html lang="en">-->
-<!--<head>-->
-<!---->
-<!--</head>-->
-<!--<body>-->
-<!--<div style="width: 40%; margin: 20px auto;">-->
-<!---->
-<!--    <form method="post" action="registerfunction.php" >-->
-<!---->
-<!--        <h2>Registration Form</h2>-->
-<!---->
-<!--        <div>-->
-<!--            <label for="name">-->
-<!--                Name: </label>-->
-<!--            <input type="text" name="name" id="name" value="--><?php //echo $name; ?><!--" placeholder="Name">-->
-<!--        </div>-->
-<!---->
-<!--        <div>-->
-<!--            <label for="username">-->
-<!--                Name: </label>-->
-<!--            <input  type="text" name="username" id="username" value="--><?php //echo $username; ?><!--"  placeholder="Username">-->
-<!--        </div>-->
-<!---->
-<!--        <div>-->
-<!--            <label for="email">-->
-<!--                Name: </label>-->
-<!--            <input type="email" id="email" name="email" value="--><?php //echo $email; ?><!--" placeholder="Email">-->
-<!--        </div>-->
-<!---->
-<!--        <div>-->
-<!--            <label for="password">-->
-<!--                Name: </label>-->
-<!--            <input type="password" id="password" name="password_1" placeholder="Password">-->
-<!--        </div>-->
-<!---->
-<!--        <div>-->
-<!--            <label for="password">-->
-<!--                Name: </label>-->
-<!--            <input type="password" id="password" name="password_2" placeholder="Password confirmation">-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <button type="submit" class="btn" name="reg_user">Register</button>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--        <p>-->
-<!--            Already a member? <a href="login.php">Sign in</a>-->
-<!--        </p>-->
-<!--        </div>-->
-<!--    </form>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->
 
-<?php
-//include_once ('config.php');
-//
-?>
 <html>
 <head>
 
@@ -147,7 +91,7 @@ include_once ('registerfunction.php');
                 <li><a href="#">PHP</a></li>
                 <li><a href="#">JAVA</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.php">Contact</a></li>
             </ul>
         </nav>
 
@@ -211,22 +155,7 @@ include_once ('registerfunction.php');
 <!-- loader -->
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-migrate-3.0.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.stellar.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/aos.js"></script>
-<script src="js/jquery.animateNumber.min.js"></script>
-<script src="js/scrollax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="js/google-map.js"></script>
-<script src="js/main.js"></script>
+        <?php  include ('loader.php')?>
 
 </body>
 </html>

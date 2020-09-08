@@ -38,9 +38,9 @@ if (isset($_GET['logout'])) {
 				<ul>
 					<li><a href="index.php">Home</a></li>
 					<li><a href="postCreate.php">PHP</a></li>
-					<li class="colorlib-active"><a href="index.php">JAVA</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li ><a href="index.php">JAVA</a></li>
+					<li><a href="about.php">About</a></li>
+					<li><a href="contact.php">Contact</a></li>
 				</ul>
 			</nav>
 
@@ -95,19 +95,15 @@ if (isset($_GET['logout'])) {
                         $dislikeCount = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-
                         ?>
 
                         <div>
-<!--                            <form method="post" action="react.php">-->
+
                                 <?php $like = 'like';
                                         $dislike = 'dislike';
                                 ?>
-<!--                                <input type="hidden" name="postid" value="--><?php //echo $posts['postId']; ?><!--">-->
                                 <?php foreach ($likeCount as $like){ echo $like ; }?>&nbsp;&nbsp;<a href="react.php?postId=<?php echo $posts['postId']; ?>&like=<?php echo $like; ?>" >Like &nbsp;</a> <?php foreach ($dislikeCount as $dislike){ echo $dislike ; }?>&nbsp;&nbsp;<a href="react.php?postId=<?php echo $posts['postId']; ?>&dislike=<?php echo $dislike; ?>" > &nbsp; Dislike </a>
-<!--                                <button type="submit" id="like" name="like"  >Like</button>-->
-<!---->
-<!--                            </form> -->
+
                         </div>
 		            </div>
 		            
@@ -145,22 +141,7 @@ if (isset($_GET['logout'])) {
 		              <div class="comment-form-wrap pt-5">
 		                <h3 class="mb-5">Leave a comment</h3>
 		                <form method="post" action="comments.php" class="p-3 p-md-5 bg-light">
-<!--		                  <div class="form-group">-->
-<!--		                    <label for="name">Name *</label>-->
-<!--		                    <input type="text" class="form-control" id="name">-->
-<!--		                  </div>-->
-<!--                            <div class="form-group">-->
-<!--                                <label for="username">User Name *</label>-->
-<!--                                <input type="text" class="form-control" id="username">-->
-<!--                            </div>-->
-<!--		                  <div class="form-group">-->
-<!--		                    <label for="email">Email *</label>-->
-<!--		                    <input type="email" class="form-control" id="email">-->
-<!--		                  </div>-->
-<!--		                  <div class="form-group">-->
-<!--		                    <label for="password">Password</label>-->
-<!--		                    <input type="password" class="form-control" id="password">-->
-<!--		                  </div>-->
+
 
 		                  <div class="form-group">
 		                    <label for="comment">Comment</label>
@@ -177,14 +158,7 @@ if (isset($_GET['logout'])) {
 			    		</div><!-- END-->
 			    	</div>
 	    			<div class="col-lg-4 sidebar ftco-animate bg-light pt-5">
-	            <div class="sidebar-box pt-md-4">
-	              <form action="#" class="search-form">
-	                <div class="form-group">
-	                  <span class="icon icon-search"></span>
-	                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
-	                </div>
-	              </form>
-	            </div>
+
 	            <div class="sidebar-box ftco-animate">
 	            	<h3 class="sidebar-heading">Categories</h3>
 	              <ul class="categories">
@@ -196,42 +170,6 @@ if (isset($_GET['logout'])) {
 	              </ul>
 	            </div>
 
-	            <div class="sidebar-box ftco-animate">
-	              <h3 class="sidebar-heading">Popular Articles</h3>
-	              <div class="block-21 mb-4 d-flex">
-	                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-	                <div class="text">
-	                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
-	                  <div class="meta">
-	                    <div><a href="#"><span class="icon-calendar"></span> June 28, 2019</a></div>
-	                    <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-	                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-	                  </div>
-	                </div>
-	              </div>
-	              <div class="block-21 mb-4 d-flex">
-	                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
-	                <div class="text">
-	                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
-	                  <div class="meta">
-	                    <div><a href="#"><span class="icon-calendar"></span> June 28, 2019</a></div>
-	                    <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-	                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-	                  </div>
-	                </div>
-	              </div>
-	              <div class="block-21 mb-4 d-flex">
-	                <a class="blog-img mr-4" style="background-image: url(images/image_3.jpg);"></a>
-	                <div class="text">
-	                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
-	                  <div class="meta">
-	                    <div><a href="#"><span class="icon-calendar"></span> June 28, 2019</a></div>
-	                    <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-	                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-	                  </div>
-	                </div>
-	              </div>
-	            </div>
 
 	            <div class="sidebar-box ftco-animate">
 	              <h3 class="sidebar-heading">Tag Cloud</h3>
@@ -285,22 +223,7 @@ if (isset($_GET['logout'])) {
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
+    <?php  include ('loader.php')?>
     
   </body>
 </html>

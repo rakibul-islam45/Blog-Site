@@ -19,32 +19,7 @@
     <head>
         <title>Update Post</title>
         <?php  include ('head'); ?>
-        <style type = "text/css">
-            .message {
-                width: 70%;
-                margin:  auto;
-                padding: 10px 0px;
-                color: #3c763d;
-                background: #dff0d8;
-                border: 1px solid #3c763d;
-                border-radius: 5px;
-                text-align: center;
-            }
-            .error {
-                color: #a94442;
-                background: #f2dede;
-                border: 1px solid #a94442;
-                margin-bottom: 20px;
-            }
-            .validation_errors p {
-                text-align: center;
-                margin-left: 10px;
-            }
-            .logged_in_info {
-                text-align: right;
-                padding: 10px;
-            }
-        </style>
+
     </head>
     <body>
 
@@ -57,7 +32,7 @@
                     <li><a href="#">PHP</a></li>
                     <li><a href="#">JAVA</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>
 
@@ -112,30 +87,8 @@
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/scrollax.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="js/google-map.js"></script>
-    <script src="js/main.js"></script>
+    <?php  include ('loader.php')?>
 
     </body>
     </html>
 
-<?php if (count($errors) > 0) : ?>
-    <div class="message error validation_errors" >
-        <?php foreach ($errors as $error) : ?>
-            <p><?php echo $error ?></p>
-        <?php endforeach ?>
-    </div>
-<?php endif ?>

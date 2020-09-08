@@ -20,31 +20,7 @@ if (isset($_GET['logout'])) {
   <head>
     <title>Home page </title>
     <?php  include ('head'); ?>
-<!--    <meta charset="utf-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
-<!--    -->
-<!--    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">-->
-<!--    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">-->
-<!--    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">-->
-<!---->
-<!--    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">-->
-<!--    <link rel="stylesheet" href="css/animate.css">-->
-<!--    -->
-<!--    <link rel="stylesheet" href="css/owl.carousel.min.css">-->
-<!--    <link rel="stylesheet" href="css/owl.theme.default.min.css">-->
-<!--    <link rel="stylesheet" href="css/magnific-popup.css">-->
-<!---->
-<!--    <link rel="stylesheet" href="css/aos.css">-->
-<!---->
-<!--    <link rel="stylesheet" href="css/ionicons.min.css">-->
-<!---->
-<!--    <link rel="stylesheet" href="css/bootstrap-datepicker.css">-->
-<!--    <link rel="stylesheet" href="css/jquery.timepicker.css">-->
-<!---->
-<!--    -->
-<!--    <link rel="stylesheet" href="css/flaticon.css">-->
-<!--    <link rel="stylesheet" href="css/icomoon.css">-->
-<!--    <link rel="stylesheet" href="css/style.css">-->
+
   </head>
   <body>
 
@@ -57,7 +33,7 @@ if (isset($_GET['logout'])) {
 					<li><a href="#">PHP</a></li>
 					<li><a href="#">JAVA</a></li>
 					<li><a href="#">About</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="contact.php">Contact</a></li>
 				</ul>
 			</nav>
 
@@ -93,7 +69,7 @@ if (isset($_GET['logout'])) {
 				              <div class="meta-wrap">
 												<p class="meta">
 				              		<span><i class="icon-calendar mr-2"></i><?php echo date("F j, Y ", strtotime($post["created"])); ?></span>
-				              		<span><a href="singlepost.php"><i class="icon-folder-o mr-2"></i><?php echo $post['tag']; ?></a></span>
+				              		<span><a href=""><i class="icon-folder-o mr-2"></i><?php echo $post['tag']; ?></a></span>
 <!--				              		<span><i class="icon-comment2 mr-2"></i>5 Comment</span>-->
 				              	</p>
 			              	</div>
@@ -123,12 +99,8 @@ if (isset($_GET['logout'])) {
 			    	</div>
 	    			<div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
 	            <div class="sidebar-box pt-md-4">
-	              <form action="#" class="search-form">
-	                <div class="form-group">
-	                  <span class="icon icon-search"></span>
-	                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
-	                </div>
-	              </form>
+
+                    <a href="register.php" class="btn btn-primary" style="color: #491217"><strong>Register</strong></a>
 	            </div>
 	            <div class="sidebar-box ftco-animate">
 	            	<h3 class="sidebar-heading">Categories</h3>
@@ -139,43 +111,6 @@ if (isset($_GET['logout'])) {
 	                <li><a href="#">Food <span>(2)</span></a></li>
 	                <li><a href="#">Photography <span>(7)</span></a></li>
 	              </ul>
-	            </div>
-
-	            <div class="sidebar-box ftco-animate">
-	              <h3 class="sidebar-heading">Popular Articles</h3>
-	              <div class="block-21 mb-4 d-flex">
-	                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-	                <div class="text">
-	                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
-	                  <div class="meta">
-	                    <div><a href="#"><span class="icon-calendar"></span> June 28, 2019</a></div>
-	                    <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-	                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-	                  </div>
-	                </div>
-	              </div>
-	              <div class="block-21 mb-4 d-flex">
-	                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
-	                <div class="text">
-	                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
-	                  <div class="meta">
-	                    <div><a href="#"><span class="icon-calendar"></span> June 28, 2019</a></div>
-	                    <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-	                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-	                  </div>
-	                </div>
-	              </div>
-	              <div class="block-21 mb-4 d-flex">
-	                <a class="blog-img mr-4" style="background-image: url(images/image_3.jpg);"></a>
-	                <div class="text">
-	                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
-	                  <div class="meta">
-	                    <div><a href="#"><span class="icon-calendar"></span> June 28, 2019</a></div>
-	                    <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-	                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-	                  </div>
-	                </div>
-	              </div>
 	            </div>
 
 	            <div class="sidebar-box ftco-animate">
@@ -234,22 +169,8 @@ if (isset($_GET['logout'])) {
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-    
+    <?php  include ('loader.php')?>
+
   </body>
 </html>
 

@@ -45,22 +45,3 @@ if(!empty($user_id)) {
 }
 
 
-//$query = "INSERT INTO react (postId, userId, reaction) VALUES (:postid, :userid, :likedis)";
-//
-//$statement = $pdo->prepare($query);
-//$statement->bindValue(':postid', $postid);
-//$statement->bindValue(':userid', $userid);
-//$statement->bindValue(':likedis', 1);
-
-//.fa {
-//    font-size: 1.2em;
-//}
-//.fa-thumbs-down, .fa-thumbs-o-down {
-//    transform:rotateY(180deg);
-//}
-//.logged_in_user {
-//    padding: 10px 30px 0px;
-//}
-//i {
-//    color: blue;
-//}

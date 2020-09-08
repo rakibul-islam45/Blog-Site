@@ -9,7 +9,7 @@ $tag = $_GET['tag'];
 //var_dump($tag);
 $query = "SELECT * FROM post WHERE tag LIKE '%" . $tag . "%'";
 $statement = $pdo->prepare($query);
-//$statement->bindValue(':tag', $tag, PDO::PARAM_STR);
+
 $statement->execute();
 
 $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -41,7 +41,7 @@ if (isset($_GET['logout'])) {
                 <li><a href="#">PHP</a></li>
                 <li><a href="#">JAVA</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.php">Contact</a></li>
             </ul>
         </nav>
 
@@ -72,12 +72,12 @@ if (isset($_GET['logout'])) {
                                     <div class="meta-wrap">
                                         <p class="meta">
                                             <span><i class="icon-calendar mr-2"></i><?php echo date("F j, Y ", strtotime($post["created"])); ?></span>
-                                            <span><a href="singlepost.php"><i class="icon-folder-o mr-2"></i><?php echo $post['tag']; ?></a></span>
-                                            <span><i class="icon-comment2 mr-2"></i>5 Comment</span>
+                                            <span><a href=""><i class="icon-folder-o mr-2"></i><?php echo $post['tag']; ?></a></span>
+
                                         </p>
                                     </div>
                                     <p class="mb-4"><?php echo $post['body']; ?></p>
-                                    <p><a href="updatepost.php?postId=<?php echo $post['postId']; ?>&userId=<?php echo $post['userId']; ?>" class="btn py-3 px-4 btn-primary">Update </a>
+                                    <p>
                                         <a href="singlepost.php?postId=<?php echo $post['postId']; ?>" class="btn-custom"> Read More <span class="ion-ios-arrow-forward"></span></a>
                                     </p>
                                 </div>
@@ -95,21 +95,6 @@ if (isset($_GET['logout'])) {
 <!-- loader -->
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-migrate-3.0.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.stellar.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/aos.js"></script>
-<script src="js/jquery.animateNumber.min.js"></script>
-<script src="js/scrollax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="js/google-map.js"></script>
-<script src="js/main.js"></script>
+    <?php  include ('loader.php')?>
 
 </body>
