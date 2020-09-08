@@ -1,4 +1,4 @@
-<<?php
+<?php
 include_once ('config.php');
 
 ?>
@@ -11,7 +11,7 @@ include_once ('config.php');
             font-size: 120%;
             background: #F8F8FF;
         }
-        .header {592653
+        .header {
 
 
         width: 40%;

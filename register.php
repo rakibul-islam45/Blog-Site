@@ -107,15 +107,7 @@ include_once ('registerfunction.php');
             border-radius: 5px;
             border: 1px solid gray;
         }
-        #user_type {
-            height: 40px;
-            width: 98%;
-            padding: 5px 10px;
-            background: white;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid gray;
-        }
+
         .btn {
             padding: 10px;
             font-size: 15px;
@@ -124,22 +116,8 @@ include_once ('registerfunction.php');
             border: none;
             border-radius: 5px;
         }
-        .error {
-            width: 92%;
-            margin: 0px auto;
-            padding: 10px;
-            border: 1px solid #a94442;
-            color: #a94442;
-            background: #f2dede;
-            border-radius: 5px;
-            text-align: left;
-        }
-        .success {
-            color: #3c763d;
-            background: #dff0d8;
-            border: 1px solid #3c763d;
-            margin-bottom: 20px;
-        }
+
+
         .profile_info img {
             display: inline-block;
             width: 50px;
@@ -155,32 +133,8 @@ include_once ('registerfunction.php');
     </style>
 
 
-    <title>Post creation</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Register</title>
+    <?php  include ('head'); ?>
 </head>
 <body>
 
@@ -218,7 +172,7 @@ include_once ('registerfunction.php');
                 <div class="header">
                     <h2>Registration Form</h2>
                 </div>
-                <form method="post" action="./loginfunction.php">
+                <form method="post" action="./registerfunction.php">
 
                 <div class="input-group">
                     <label for="name" class=" input-group label">Name: </label>

@@ -63,7 +63,7 @@ if (isset($_POST['reg_user'])) {
         $statement->bindValue(':password', $password);
 
         if($statement->execute()) {
-            header("location: adminLogin.php");
+            header("location: login.php");
            // echo 'Inserted';
         } else {
             echo 'Could not insert';
@@ -71,41 +71,10 @@ if (isset($_POST['reg_user'])) {
     }
 }
 ?>
-    <html lang="en">
-    <head>
-        <style type = "text/css">
-            .message {
-                width: 100%;
-                margin: 0px auto;
-                padding: 10px 0px;
-                color: #3c763d;
-                background: #dff0d8;
-                border: 1px solid #3c763d;
-                border-radius: 5px;
-                text-align: center;
-            }
-            .error {
-                color: #a94442;
-                background: #f2dede;
-                border: 1px solid #a94442;
-                margin-bottom: 20px;
-            }
-            .validation_errors p {
-                text-align: left;
-                margin-left: 10px;
-            }
-            .logged_in_info {
-                text-align: right;
-                padding: 10px;
-            }
-        </style>
-    </head>
-    </html>
+
 
 <?php if (count($errors) > 0) : ?>
-    <div class="message error validation_errors" >
-        <?php foreach ($errors as $error) : ?>
-            <p><?php echo $error ?></p>
-        <?php endforeach ?>
-    </div>
+    <?php  echo '<script type="text/javascript">alert("Error: ' . implode(" , ", $errors) . '");
+                       window.location.href="register.php";
+                        </script>'; ?>
 <?php endif ?>
